@@ -1,1 +1,481 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Manrope:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
+
+:root {
+  --bg: #ecebe7;
+  --paper: #f8f7f3;
+  --ink: #171717;
+  --muted: #575757;
+  --line: #1f1f1f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 8% 12%, #ffffffc0 0%, transparent 30%),
+    linear-gradient(140deg, #f1f0ed 0%, #e5e4e0 50%, #edebe7 100%);
+  background-attachment: fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.4;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 14px,
+    #00000008 14px,
+    #00000008 15px
+  );
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: "Fraunces", "Times New Roman", serif;
+  letter-spacing: 0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+.home-shell {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-panel {
+  width: min(960px, 100%);
+  border: 1px solid #00000030;
+  border-radius: 1.25rem;
+  background: color-mix(in oklab, var(--paper) 92%, white 8%);
+  box-shadow:
+    0 25px 60px #00000012,
+    0 2px 0 #ffffff80 inset,
+    0 -2px 0 #00000008 inset;
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.home-kicker {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #0000008a;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.home-title {
+  font-size: clamp(2.3rem, 5vw, 3rem);
+  line-height: 1.15;
+  width: 90%;
+  margin-bottom: 1.25rem;
+}
+
+.home-subtitle {
+  max-width: 60ch;
+  color: var(--muted);
+  font-size: clamp(0.94rem, 2vw, 1.08rem);
+  margin-bottom: 2rem;
+}
+
+.home-grid {
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.page-link {
+  --page-color: #6b6b6b;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #00000035;
+  border-color: color-mix(in oklab, var(--page-color) 34%, #00000035);
+  border-radius: 0.95rem;
+  text-decoration: none;
+  color: inherit;
+  padding: 1rem 1rem 1rem 1.6rem;
+  min-height: 6.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.6rem;
+  background:
+    linear-gradient(180deg, #ffffffcf 0%, #f0efeb 100%),
+    repeating-linear-gradient(45deg, #00000003 0 2px, transparent 2px 10px);
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease,
+    background-color 220ms ease;
+}
+
+.page-link::before {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  width: 0.35rem;
+  background: color-mix(in oklab, var(--page-color) 74%, white 26%);
+  border-top-left-radius: 0.8rem;
+  border-bottom-left-radius: 0.8rem;
+}
+
+.page-link:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 13px 26px color-mix(in oklab, var(--page-color) 10%, #00000010),
+    0 0 0 1px color-mix(in oklab, var(--page-color) 36%, transparent);
+  border-color: color-mix(in oklab, var(--page-color) 55%, #00000042);
+  background:
+    linear-gradient(180deg, #ffffff 0%, #efefeb 100%),
+    repeating-linear-gradient(45deg, #00000003 0 2px, transparent 2px 10px);
+}
+
+.page-link-title {
+  font-family: "Fraunces", "Times New Roman", serif;
+  font-size: 1.2rem;
+  line-height: 1.15;
+}
+
+.page-link-slug {
+  font-size: 0.74rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: #00000096;
+  font-weight: 700;
+}
+
+.agent-shell {
+  --page-color: #6b6b6b;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem;
+  gap: 0.8rem;
+  background: color-mix(in oklab, var(--page-color) 20%, transparent);
+}
+
+.agent-header {
+  border: 1px solid color-mix(in oklab, var(--page-color) 30%, #0000002e);
+  border-radius: 1rem;
+  background: color-mix(in oklab, #f6f5f2cc 84%, var(--page-color) 10%);
+  backdrop-filter: blur(4px);
+  padding: 0.6rem;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+}
+
+.back-button {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.7rem;
+  border: 1px solid color-mix(in oklab, var(--page-color) 35%, #0000003a);
+  color: inherit;
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
+  background: color-mix(in oklab, #ffffffc4 90%, var(--page-color) 10%);
+}
+
+.back-button:hover {
+  transform: translateX(-1px);
+  background: #ffffffff;
+}
+
+.link-button {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.7rem;
+  border: 1px solid color-mix(in oklab, var(--page-color) 35%, #0000003a);
+  color: inherit;
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
+  background: color-mix(in oklab, #ffffffc4 90%, var(--page-color) 10%);
+}
+
+.link-button:hover {
+  transform: translateX(1px);
+  background: #ffffffff;
+}
+
+.agent-title-wrap {
+  text-align: center;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.7rem;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.agent-title {
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  line-height: 1;
+  overflow-wrap: anywhere;
+}
+
+.agent-title-chevron {
+  transform: translateY(1px);
+  width: clamp(1.4rem, 3vw, 1.8rem);
+  height: clamp(1.4rem, 3vw, 1.8rem);
+  transition: transform 180ms ease;
+}
+
+.agent-title-chevron.is-open {
+  transform: rotate(180deg);
+}
+
+.agent-title-trigger {
+  appearance: none;
+  border: 0;
+  display: block;
+  background: transparent;
+  color: inherit;
+  border-radius: 0.8rem;
+  padding: 0.2rem 0.4rem;
+  cursor: pointer;
+  transition: background-color 180ms ease;
+  width: fit-content;
+  max-width: min(100%, 36rem);
+  justify-self: center;
+}
+
+.agent-title-trigger:focus-visible {
+  background: color-mix(in oklab, #ffffffbd 74%, var(--page-color) 26%);
+}
+
+.agent-title-trigger:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--page-color) 42%, #0000001a);
+  outline-offset: 2px;
+}
+
+.agent-switcher-popover {
+  width: min(24rem, calc(100vw - 2rem));
+  border: 1px solid color-mix(in oklab, var(--page-color) 34%, #00000036);
+  border-radius: 0.9rem;
+  background: color-mix(in oklab, var(--paper) 92%, white 8%);
+  box-shadow: 0 18px 34px #00000018;
+}
+
+.agent-switcher-kicker {
+  margin: 0;
+  padding: 0.3rem 0.25rem 0.2rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #00000082;
+}
+
+.agent-switcher-list {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.agent-switcher-link {
+  --option-color: #707070;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 0.7rem;
+  padding: 0.7rem 0.7rem 0.7rem 1.05rem;
+  border: 1px solid color-mix(in oklab, var(--option-color) 26%, #0000001f);
+  background:
+    linear-gradient(180deg, #ffffffcf 0%, #f0efeb 100%),
+    repeating-linear-gradient(45deg, #00000003 0 2px, transparent 2px 10px);
+  display: grid;
+  gap: 0.14rem;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.agent-switcher-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 0.3rem;
+  background: color-mix(in oklab, var(--option-color) 74%, white 26%);
+  border-top-left-radius: 0.7rem;
+  border-bottom-left-radius: 0.7rem;
+}
+
+.agent-switcher-link:hover {
+  transform: translateY(-1px);
+  border-color: color-mix(in oklab, var(--option-color) 50%, #0000002a);
+  background:
+    linear-gradient(180deg, #ffffff 0%, #efefeb 100%),
+    repeating-linear-gradient(45deg, #00000003 0 2px, transparent 2px 10px);
+  box-shadow: 0 10px 18px
+    color-mix(in oklab, var(--option-color) 16%, #0000000f);
+}
+
+.agent-switcher-link.is-active {
+  border-color: color-mix(in oklab, var(--option-color) 72%, #00000022);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--option-color) 88%, white 12%) 0%,
+    color-mix(in oklab, var(--option-color) 94%, black 10%) 100%
+  );
+  color: #ffffff;
+  box-shadow: 0 10px 18px
+    color-mix(in oklab, var(--option-color) 35%, #00000014);
+}
+
+.agent-switcher-link.is-active .agent-switcher-link-description {
+  color: #ffffffd4;
+}
+
+.agent-switcher-link-title {
+  font-family: "Fraunces", "Times New Roman", serif;
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.agent-switcher-link-description {
+  font-size: 0.9rem;
+  color: #0000009a;
+}
+
+.agent-slug {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #00000082;
+  margin-top: 0.35rem;
+  font-weight: 700;
+}
+
+.agent-frame-shell {
+  position: relative;
+  flex: 1;
+  border: 1px solid color-mix(in oklab, var(--page-color) 28%, #00000030);
+  border-radius: 1.1rem;
+  background: color-mix(in oklab, #f6f5f2cc 84%, var(--page-color) 10%);
+  box-shadow: 0 16px 30px #00000010;
+  overflow: hidden;
+}
+
+.agent-frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  transition: opacity 260ms ease;
+}
+
+.loader-shell {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.loader-spinner {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  border: 3px solid
+    color-mix(in oklab, var(--page-color, var(--ink)) 24%, transparent);
+  border-top-color: var(--page-color, var(--ink));
+  animation: spin 1s linear infinite;
+}
+
+.loader-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: color-mix(in oklab, var(--page-color, var(--ink)) 74%, black 26%);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-panel {
+    border-radius: 1rem;
+    padding: 1.2rem;
+  }
+}
+
+.home-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  width: min(960px, 100%);
+  border: 1px solid #00000030;
+  border-radius: 100rem;
+  background: color-mix(in oklab, var(--paper) 92%, white 8%);
+  box-shadow:
+    0 25px 60px #00000012,
+    0 2px 0 #ffffff80 inset,
+    0 -2px 0 #00000008 inset;
+  color: var(--ink);
+  font-size: 0.82rem;
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
+  font-weight: 500;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease,
+    background-color 220ms ease;
+}
+
+.home-footer:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 13px 26px #00000014;
+  border-color: #00000042;
+}
