@@ -7,15 +7,19 @@ import { ExternalLink } from "lucide-react";
 function HomePage() {
   return (
     <main className="home-shell">
-      <section className="home-panel">
+      <section className="home-panel text-center flex flex-col items-center">
         <p className="home-kicker">Jesus Loves You Ball</p>
-        <h1 className="home-title">Choose a Chatbot to fit your need:</h1>
+        <h1 className="home-title">Welcome</h1>
         <p className="home-subtitle">
-          Each chatbot is designed with a specific focus, but feel free to
-          explore and see which one resonates with you the most! You can always
-          switch between them to find the perfect fit for your questions and
-          curiosities.
+          This ball is used around the world to to increase people's
+          understanding of (and joy in) God and the game of Soccer. And it
+          starts with a simple message:{" "}
+          <span className="font-bold">
+            <br />
+            Jesus Loves You
+          </span>
         </p>
+        <p className="home-subtitle">So... What brings you here today?</p>
         <div className="home-grid">
           {validPages.map((page) => (
             <Link
