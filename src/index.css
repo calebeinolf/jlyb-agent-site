@@ -35,13 +35,6 @@ body::before {
   inset: 0;
   pointer-events: none;
   opacity: 0.4;
-  background-image: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 14px,
-    #00000008 14px,
-    #00000008 15px
-  );
 }
 
 h1,
