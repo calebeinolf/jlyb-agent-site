@@ -7,19 +7,30 @@ import { ExternalLink } from "lucide-react";
 function HomePage() {
   return (
     <main className="home-shell">
+      <div className="language-picker-panel">
+        <script src="https://elfsightcdn.com/platform.js" async></script>
+        <div
+          className="elfsight-app-ad503079-3afa-4227-a7dc-3d915810e134"
+          data-elfsight-app-lazy
+        ></div>
+      </div>
+
       <section className="home-panel text-center flex flex-col items-center">
-        <p className="home-kicker">Jesus Loves You Ball</p>
-        <h1 className="home-title">Welcome</h1>
-        <p className="home-subtitle">
-          This ball is used around the world to to increase people's
-          understanding of (and joy in) God and the game of Soccer. And it
-          starts with a simple message:{" "}
-          <span className="font-bold">
-            <br />
-            Jesus Loves You
-          </span>
-        </p>
-        <p className="home-subtitle">So... What brings you here today?</p>
+        <img
+          className="home-logo"
+          src="/JLYB-Logo-1.png"
+          alt="Jesus Loves You Ball"
+        />
+        <h1 className="home-title">Welcome!</h1>
+        <div className="home-subtext">
+          <p className="home-subtitle">
+            This ball is used around the world to to increase people's
+            understanding of (and joy in) God and the game of Soccer. And it
+            starts with a simple message:
+          </p>
+          <p className="home-subtitle-large">Jesus Loves You.</p>
+          <p className="home-subtitle">What brings you here today?</p>
+        </div>
         <div className="home-grid">
           {validPages.map((page) => (
             <Link

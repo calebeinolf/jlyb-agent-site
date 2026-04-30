@@ -10,25 +10,25 @@ export const pageData = {
     title: "General Questions",
     description: "Ask broad, everyday faith questions.",
     iframeUrl: "https://jlybquestions.apologetics.bot/en",
-    color: "#fcb130",
+    color: "#FBB030",
   },
   mission: {
     title: "Mission",
-    description: "Explore purpose, calling, and direction.",
+    description: "Learn how to share Jesus through the game.",
     iframeUrl: "https://jlybmission.apologetics.bot/en",
-    color: "#0081c7",
+    color: "#1f67ff",
   },
   curiosity: {
     title: "Curiosity",
-    description: "Follow interesting ideas and what-ifs.",
+    description: "Learn what the Jesus Loves You Ball is all about.",
     iframeUrl: "https://jlybcuriosity.apologist.bot/en",
-    color: "#00910a",
+    color: "#00A651",
   },
   "skill-development": {
     title: "Skill Development",
-    description: "Build practical habits and communication skills.",
+    description: "Practical help for players and coaches who want to grow.",
     iframeUrl: "https://jlybskilldevelopment.apologetics.bot/en",
-    color: "#ed324e",
+    color: "#e73e52",
   },
 } satisfies Record<string, PageDefinition>;
 
